@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Hotel - Tasty</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <h1>Tasty 🍴</h1>
+    </div>
+    <div class="header-right">
+      <img src="https://cdn-icons-png.flaticon.com/512/1404/1404945.png" alt="Tasty Logo" class="logo">
+    </div>
+  </header>
+
+  <section class="category">
+    <h2>Select Your Hotel</h2>
+    <div class="category-buttons" id="hotel-buttons">
+      <!-- Hotels will load here -->
+    </div>
+  </section>
+
+  <script>
+    const type = localStorage.getItem('foodType');
+    const hotelButtons = document.getElementById('hotel-buttons');
+
+    const hotels = {
+      veg: ["Green Leaf", "Veg Delight", "Pure Veg Paradise"],
+      nonveg: ["Spice & Grill", "Meat Lovers Hub", "BBQ Junction"]
+    };
+
+    if (!type) {
+      hotelButtons.innerHTML = "<p>Please go back and select Veg or Non-Veg.</p>";
+    } else {
+      hotels[type].forEach(hotel => {
+        const btn = document.createElement('button');
+        btn.textContent = hotel;
+        btn.onclick = () => {
+          localStorage.setItem('selectedHotel', hotel);
+          window.location.href = 'menu.html';
+        };
+        hotelButtons.appendChild(btn);
+      });
+    }
+  </script>
+</body>
+</html>

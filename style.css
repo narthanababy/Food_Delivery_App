@@ -1,0 +1,148 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff8f0;
+  color: #333;
+}
+
+header {
+  background-color: #ff6347;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+header h1 {
+  font-size: 1.8rem;
+}
+
+nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: #ffe5d4;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  color: #ff6347;
+}
+
+button {
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e5533d;
+}
+
+#menu {
+  padding: 40px;
+  text-align: center;
+}
+
+.menu-items {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.item {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+  width: 200px;
+}
+
+.item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+footer {
+  text-align: center;
+  background-color: #ff6347;
+  color: white;
+  padding: 10px;
+  margin-top: 30px;
+}
+.category {
+  text-align: center;
+  padding: 100px 20px;
+  background-color: #ffe5d4;
+}
+
+.category-buttons {
+  margin-top: 30px;
+}
+
+.category-buttons button {
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 18px;
+  margin: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.category-buttons button:hover {
+  background-color: #e5533d;
+}
+.logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: white;
+  padding: 5px;
+  border: 2px solid white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+.category {
+  text-align: center;
+  padding: 100px 20px;
+  background-color: #ffe5d4;
+}
+
+.category-buttons {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.category-buttons button {
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 250px;
+}
+
+.category-buttons button:hover {
+  background-color: #e5533d;
+}

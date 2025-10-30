@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu - Tasty</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <h1>Tasty 🍴</h1>
+    </div>
+    <div class="header-right">
+      <img src="https://cdn-icons-png.flaticon.com/512/1404/1404945.png" alt="Tasty Logo" class="logo">
+    </div>
+  </header>
+
+  <section id="menu">
+    <h2 id="menu-title"></h2>
+    <h3 id="hotel-name" style="color:#555;"></h3>
+    <div class="menu-items" id="menu-list"></div>
+  </section>
+
+  <footer>
+    <p>© 2025 Tasty - All Rights Reserved</p>
+  </footer>
+
+  <script>
+    const foodType = localStorage.getItem('foodType');
+    const selectedHotel = localStorage.getItem('selectedHotel');
+    const menuTitle = document.getElementById('menu-title');
+    const hotelName = document.getElementById('hotel-name');
+    const menuList = document.getElementById('menu-list');
+
+    const menus = {
+      veg: [
+        { name: "Paneer Butter Masala", price: "₹180", img: "https://via.placeholder.com/150?text=Paneer" },
+        { name: "Veg Biryani", price: "₹150", img: "https://via.placeholder.com/150?text=Biryani" },
+        { name: "Aloo Paratha", price: "₹100", img: "https://via.placeholder.com/150?text=Paratha" }
+      ],
+      nonveg: [
+        { name: "Chicken Biryani", price: "₹200", img: "https://via.placeholder.com/150?text=Chicken" },
+        { name: "Fish Curry", price: "₹220", img: "https://via.placeholder.com/150?text=Fish" },
+        { name: "Egg Fried Rice", price: "₹130", img: "https://via.placeholder.com/150?text=Egg" }
+      ]
+    };
+
+    if (foodType && selectedHotel) {
+      menuTitle.textContent = foodType === 'veg' ? "Veg Menu" : "Non-Veg Menu";
+      hotelName.textContent = `Hotel: ${selectedHotel}`;
+      displayMenu(menus[foodType]);
+    } else {
+      menuTitle.textContent = "Menu";
+      menuList.innerHTML = "<p>Please go back and select category and hotel.</p>";
+    }
+
+    function displayMenu(items) {
+      menuList.innerHTML = items.map(item => `
+        <div class="item">
+          <img src="${item.img}" alt="${item.name}">
+          <h3>${item.name}</h3>
+          <p>${item.price}</p>
+        </div>
+      `).join('');
+    }
+  </script>
+</body>
+</html>
